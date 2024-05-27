@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import axiosInstance from '../config/axios';
+
+
+  let data = [];
+
+  axiosInstance.get('/topics').then(res => console.log(res))
+
+</script>
+
+
 <template>
   <div>
     <div>
