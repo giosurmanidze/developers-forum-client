@@ -5,8 +5,8 @@ import { RouterView } from "vue-router";
 <template>
   <div>
     <h1>Navbar</h1>
-    <div class="bg-main_body_bg h-screen flex justify-center">
-      <div class="w-[60%] pt-14">
+    <div class="bg-secondary h-auto flex justify-center">
+      <div class="w-[60%] pt-14 pb-28">
         <router-view />
       </div>
     </div>

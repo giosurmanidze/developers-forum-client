@@ -1,16 +1,25 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useCategoriesStore } from "../stores/categories/useCategoriesStore";
+import CategoryCard from "../components/CategoryCard.vue";
 import { storeToRefs } from "pinia";
 
-const { fetchCategories} = useCategoriesStore();
-const store = storeToRefs(useCategoriesStore())
+const { fetchCategories } = useCategoriesStore();
+const store = storeToRefs(useCategoriesStore());
 
 onMounted(() => {
   fetchCategories();
 });
 
-console.log(store.categories)
+const leftBorderColors = [
+  "#6ECA6E",
+  "#f1be32",
+  "#df710c",
+  "#0a729d",
+  "#9a4993",
+  "#86d7ff",
+];
+
 </script>
 
 <template>
@@ -33,16 +42,28 @@ console.log(store.categories)
           <button class="button-style">LeaderBoard</button>
         </div>
       </div>
-      <div class="pt-8 text-text_color text-md">Online(45): Niknames</div>
+      <div class="pt-8 text-primary_high text-md">Online(45): Niknames</div>
     </div>
     <div class="pt-8 flex justify-between gap-10">
       <div class="flex-grow">
-        <div class="pt-8 text-text_color text-md">Subforum</div>
-        <div class="border-t-2 border-text_color mt-2"></div>
+        <div class="pt-8 text-primary_high text-md">Subforum</div>
+        <div class="border-t-2 border-primary_high mt-2"></div>
+        <div
+          v-for="(category, index) in store.categories.value"
+          :key="category.id"
+        >
+          <category-card
+            :category="category"
+            :borderColor="leftBorderColors[index]"
+          />
+        </div>
       </div>
       <div class="flex-grow">
-        <div class="pt-8 text-text_color text-md">Latest topics</div>
-        <div class="border-t-2 border-text_color mt-2"></div>
+        <div class="pt-8 text-primary_high text-md">Latest topics</div>
+        <div class="border-t-2 border-primary_high mt-2"></div>
+        <!-- <div v-for="category in store.categories.value" :key="category.id">
+          <category-card :category="category" />
+        </div> -->
       </div>
     </div>
   </div>

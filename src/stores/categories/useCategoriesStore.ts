@@ -1,9 +1,15 @@
 import { defineStore } from "pinia";
 
+interface ICategory {
+    id: number,
+    name: string,
+    description: string
+}
+
 
 export const useCategoriesStore = defineStore('useCategoriesStore', {
     state:() => ({
-        categories: []
+        categories: [] as ICategory[]
     }),
     actions: {
         async fetchCategories() {
