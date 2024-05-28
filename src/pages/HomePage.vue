@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import axiosInstance from '../config/axios';
+import { onMounted } from "vue";
+import { useCategoriesStore } from "../stores/categories/useCategoriesStore";
+import { storeToRefs } from "pinia";
 
+const { fetchCategories} = useCategoriesStore();
+const store = storeToRefs(useCategoriesStore())
 
-  let data = [];
+onMounted(() => {
+  fetchCategories();
+});
 
-  axiosInstance.get('/topics').then(res => console.log(res))
-
+console.log(store.categories)
 </script>
-
 
 <template>
   <div>
