@@ -6,14 +6,14 @@ import { storeToRefs } from "pinia";
 import { useTopicsStore } from "@/stores/topics/useTopicsStore";
 import TopicCard from "@/components/TopicCard.vue";
 
-const { fetchCategories } = useCategoriesStore();
-const { fetchTopics } = useTopicsStore();
+const { getCategories } = useCategoriesStore();
+const { getTopics } = useTopicsStore();
 const store = storeToRefs(useCategoriesStore());
 const storeTopics = storeToRefs(useTopicsStore());
 
 onMounted(() => {
-  fetchCategories();
-  fetchTopics();
+  getCategories();
+  getTopics();
 });
 
 const leftBorderColors = [

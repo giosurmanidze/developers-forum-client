@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import axios from "@/config/axios";
 import { ITopic } from "@/types";
+import { getTopics } from "./actions";
 
 
 export const useTopicsStore = defineStore('useTopicsStore', {
@@ -8,14 +8,6 @@ export const useTopicsStore = defineStore('useTopicsStore', {
         topics: [] as ITopic[]
     }),
     actions: {
-        async fetchTopics()
-        {
-            try {
-                const response = await axios('/topics')
-                this.topics = response.data
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
-        }
+       getTopics
     }
 })
