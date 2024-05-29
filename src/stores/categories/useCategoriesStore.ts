@@ -1,11 +1,6 @@
 import axios from "../../config/axios/index";
 import { defineStore } from "pinia";
-
-interface ICategory {
-    id: number,
-    name: string,
-    description: string
-}
+import { ICategory } from "../../types";
 
 
 export const useCategoriesStore = defineStore('useCategoriesStore', {

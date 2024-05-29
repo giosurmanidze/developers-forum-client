@@ -1,29 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-
-interface IUser {
-  id: number;
-  name: string;
-  email: string;
-  created_at: string;
-}
-
-interface ICategory {
-  id: number;
-  name: string;
-  description: string;
-}
-
-interface ITopic {
-  id: number;
-  title: string;
-  content: string;
-  views_count: number;
-  replies_count: number;
-  created_at: string;
-  user: IUser;
-  categories: ICategory[];
-}
+import { ICategory, ITopic } from "../types";
 
 defineProps<{
   topic: ITopic;

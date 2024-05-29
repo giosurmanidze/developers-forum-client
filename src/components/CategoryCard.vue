@@ -1,10 +1,6 @@
 <script setup lang="ts">
+import { ICategory } from '../types';
 
-interface ICategory {
-  id: number;
-  name: string;
-  description: string;
-}
 
 defineProps<{
   category: ICategory;
