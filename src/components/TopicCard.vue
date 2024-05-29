@@ -1,28 +1,11 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { ICategory, ITopic } from "../types";
+import { ITopic } from '../types';
+import { defineCategoryColor } from '../utils/categoryColorUtil';
 
 defineProps<{
   topic: ITopic;
 }>();
 
-const defineCategoryColor = computed(() => {
-  return (category: ICategory) => {
-    return category.name === "Python"
-      ? "bg-[#6ECA6E]"
-      : category.name === "Html-Css"
-        ? "bg-[#df710c]"
-        : category.name === "Backend Development"
-          ? "bg-[#0a729d]"
-          : category.name === "Code Feedback"
-            ? "bg-[#86d7ff]"
-            : category.name === "C#"
-              ? "bg-[#9a4993]"
-              : category.name === "Backend Development"
-                ? "bg-[#0a729d]"
-                : "";
-  };
-});
 </script>
 
 <template>
