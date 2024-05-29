@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ICategory } from '../types';
+import { ICategory } from '@/types';
 
 
 defineProps<{

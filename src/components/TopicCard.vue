@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ITopic } from '../types';
-import { defineCategoryColor } from '../utils/categoryColorUtil';
+import { ITopic } from '@/types';
+import { defineCategoryColor } from '@/utils/categoryColorUtil';
 
 defineProps<{
   topic: ITopic;

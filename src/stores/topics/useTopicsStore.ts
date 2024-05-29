@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import axios from "../../config/axios";
-import { ITopic } from "../../types";
+import axios from "@/config/axios";
+import { ITopic } from "@/types";
 
 
 export const useTopicsStore = defineStore('useTopicsStore', {

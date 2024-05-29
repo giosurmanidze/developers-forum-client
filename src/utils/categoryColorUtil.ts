@@ -1,5 +1,5 @@
 import { computed } from "vue";
-import { ICategory } from "../types";
+import { ICategory } from "@/types";
 
 export const defineCategoryColor = computed(() => {
     return (category: ICategory) => {
