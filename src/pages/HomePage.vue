@@ -7,13 +7,13 @@ import { useTopicsStore } from "@/stores/topics/useTopicsStore";
 import TopicCard from "@/components/TopicCard.vue";
 
 const { getCategories } = useCategoriesStore();
-const { getTopics } = useTopicsStore();
+const { getLimitedTopics } = useTopicsStore();
 const store = storeToRefs(useCategoriesStore());
 const storeTopics = storeToRefs(useTopicsStore());
 
 onMounted(() => {
   getCategories();
-  getTopics();
+  getLimitedTopics();
 });
 
 const leftBorderColors = [
