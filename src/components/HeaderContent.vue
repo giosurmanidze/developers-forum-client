@@ -1,58 +1,47 @@
 <script setup lang="ts">
-import { useRoute, RouterLink } from "vue-router";
+import FilterButton from "@/components/FilterButton.vue";
 
-const route = useRoute();
-const routePath = route.path;
+const btns = [
+  {
+    page_name: "home",
+    path: "/",
+    btnName: "Subforums",
+  },
+  {
+    page_name: "latest",
+    path: "/latest",
+    btnName: "Latest",
+  },
+  {
+    page_name: "",
+    path: "",
+    btnName: "Top",
+  },
+  {
+    page_name: "",
+    path: "",
+    btnName: "LeaderBoard",
+  },
+];
 </script>
 
 <template>
   <div class="flex flex-col">
     <div class="flex justify-between items-center">
-      <div class="flex gap-2">
+      <div class="flex gap-2 items-center">
         <div class="button-container">
-          <router-link to="" class="button-style">Categories ></router-link>
+          <button class="button-style">Categories ></button>
         </div>
-        <div class="button-container">
-          <router-link
-            :to="{ name: 'home' }"
-            :class="{ active: routePath === '/' }"
-            class="button-style"
-          >
-            Subforums
-          </router-link>
-        </div>
-        <div class="button-container">
-          <router-link
-            :to="{ name: 'latest' }"
-            :class="{ active: routePath === '/latest' }"
-            class="button-style"
-          >
-            Latest
-          </router-link>
-        </div>
-        <div class="button-container">
-          <router-link
-            to=""
-            class="button-style"
-            :class="{ active: routePath === '/top' }"
-            >Top</router-link
-          >
-        </div>
-        <div class="button-container">
-          <router-link
-            to=""
-            class="button-style"
-            :class="{ active: routePath === '/leader-board' }"
-            >LeaderBoard</router-link
-          >
+        <div v-for="btn in btns">
+          <filter-button
+            :pageName="btn.page_name"
+            :path="btn.path"
+            :btnName="btn.btnName"
+          />
         </div>
       </div>
       <div class="button-container">
-        <button
-          to=""
-          class="button-style"
-          :class="{ active: routePath === '/leader-board' }"
-        >
+        <button to="" class="button-style">
           <span class="text-2xl font-bold">+</span> New Topic
         </button>
       </div>
@@ -60,29 +49,3 @@ const routePath = route.path;
     <div class="pt-4 text-primary_high text-md">Online(45): Niknames</div>
   </div>
 </template>
-
-<style>
-.active {
-  background-color: #dddee0;
-  color: #424255;
-}
-
-.button-container {
-  display: inline-block;
-  color: #dddee0;
-}
-
-.button-style {
-  padding: 0.5rem 1rem;
-  border: 2px solid #dddee0;
-  font-size: 1.125rem;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-}
-
-.button-style:hover {
-  background-color: #dddee0;
-  color: #424255;
-}
-</style>
