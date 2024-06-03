@@ -1,9 +1,9 @@
 import axios from "@/config/axios";
 
-export async function getLimitedTopics()
+export async function getTopics(limit: string)
 {
     try {
-        const response = await axios('/topics?limit=15')
+        const response = await axios(`/topics?limit=${limit}`)
         this.topics = response.data
     } catch (error) {
         console.error('Error fetching categories:', error);

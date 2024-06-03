@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ITopic } from "@/types";
-import { getLimitedTopics } from "./actions";
+import { getTopics } from "./actions";
 
 
 export const useTopicsStore = defineStore('useTopicsStore', {
@@ -8,6 +8,6 @@ export const useTopicsStore = defineStore('useTopicsStore', {
         topics: [] as ITopic[]
     }),
     actions: {
-        getLimitedTopics
+        getTopics
     }
 })

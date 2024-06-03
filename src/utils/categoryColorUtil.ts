@@ -3,7 +3,9 @@ import { ICategory } from "@/types";
 
 export const defineCategoryColor = computed(() => {
     return (category: ICategory) => {
-      return category.name === "Python"
+      return category.name === "Javascript"
+        ? "bg-[#f1be32]" :
+      category.name === "Python"
         ? "bg-[#6ECA6E]"
         : category.name === "Html-Css"
           ? "bg-[#df710c]"

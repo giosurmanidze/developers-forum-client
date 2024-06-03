@@ -4,7 +4,7 @@ import { ICategory } from '@/types';
 
 defineProps<{
   category: ICategory;
-  borderColor: string
+  borderColor?: string
 }>();
 
 </script>
