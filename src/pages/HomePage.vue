@@ -6,6 +6,7 @@ import { storeToRefs } from "pinia";
 import { useTopicsStore } from "@/stores/topics/useTopicsStore";
 import TopicCard from "@/components/TopicCard.vue";
 import HeaderContent from "@/components/HeaderContent.vue";
+import { leftBorderColors } from "@/data/borderColors";
 
 const { getCategories } = useCategoriesStore();
 const { getTopics } = useTopicsStore();
@@ -17,14 +18,6 @@ onMounted(() => {
   getTopics("15");
 });
 
-const leftBorderColors = [
-  "#f1be32",
-  "#6ECA6E",
-  "#df710c",
-  "#0a729d",
-  "#9a4993",
-  "#86d7ff",
-];
 </script>
 
 <template>
