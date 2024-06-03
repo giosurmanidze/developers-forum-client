@@ -5,7 +5,7 @@ import CategoryCard from "@/components/CategoryCard.vue";
 import { storeToRefs } from "pinia";
 import { useTopicsStore } from "@/stores/topics/useTopicsStore";
 import TopicCard from "@/components/TopicCard.vue";
-import FilterButtons from "@/components/FilterButtons.vue";
+import HeaderContent from "@/components/HeaderContent.vue";
 
 const { getCategories } = useCategoriesStore();
 const { getTopics } = useTopicsStore();
@@ -29,10 +29,7 @@ const leftBorderColors = [
 
 <template>
   <div>
-    <div>
-      <filter-buttons />
-      <div class="pt-8 text-primary_high text-md">Online(45): Niknames</div>
-    </div>
+    <header-content />
     <div class="pt-8 flex justify-between gap-10">
       <div class="flex-1">
         <div class="pt-8 px-2 text-primary_high text-md">Subforum</div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FilterButtons from "@/components/FilterButtons.vue";
+import HeaderContent from "@/components/HeaderContent.vue";
 import { useTopicsStore } from "@/stores/topics/useTopicsStore";
 import { storeToRefs } from "pinia";
 import TopicCard from "@/components/TopicCard.vue";
@@ -15,10 +15,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <div>
-      <filter-buttons />
-      <div class="pt-8 text-primary_high text-md">Online(45): Niknames</div>
-    </div>
+    <header-content />
     <div class="pt-8">
       <div class="flex justify-between px-2">
         <div class="text-primary_high text-md">Topic</div>
