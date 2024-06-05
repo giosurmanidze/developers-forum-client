@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ICategory } from '@/types';
-
+import { ICategory } from "@/types";
 
 defineProps<{
   category: ICategory;
-  borderColor?: string
+  borderColor?: string;
 }>();
-
 </script>
 
 <template>

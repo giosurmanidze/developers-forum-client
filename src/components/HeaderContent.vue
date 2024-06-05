@@ -1,8 +1,23 @@
 <script setup lang="ts">
-import FilterButton from "@/components/FilterButton.vue";
+import FilterButton from "./FilterButton.vue";
 import { btns } from "@/data/buttons";
+import { ref } from "vue";
+import AddTopicModal from "./AddTopicModal.vue";
+import CategoryInput from "./CategoryInput.vue";
 
+const isModalOpened = ref(false);
+const categories = ref([]);
 
+const openModal = () => {
+  isModalOpened.value = true;
+};
+const closeModal = () => {
+  isModalOpened.value = false;
+};
+
+const submitHandler = () => {
+  //here you do whatever
+};
 </script>
 
 <template>
@@ -21,9 +36,21 @@ import { btns } from "@/data/buttons";
         </div>
       </div>
       <div class="button-container">
-        <button to="" class="button-style">
+        <button class="button-style" @click="openModal">
           <span class="text-2xl font-bold">+</span> New Topic
         </button>
+        <add-topic-modal
+          :isOpen="isModalOpened"
+          @modal-close="closeModal"
+          @submit="submitHandler"
+          headerText="Create a new topic"
+          btnName="Create Topic"
+        >
+          <template #content
+            ><form>
+              <category-input :categories="categories" /></form
+          ></template>
+        </add-topic-modal>
       </div>
     </div>
     <div class="pt-4 text-primary_high text-md">Online(45): Niknames</div>

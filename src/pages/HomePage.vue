@@ -8,6 +8,8 @@ import TopicCard from "@/components/TopicCard.vue";
 import HeaderContent from "@/components/HeaderContent.vue";
 import { leftBorderColors } from "@/data/borderColors";
 
+
+
 const { getCategories } = useCategoriesStore();
 const { getTopics } = useTopicsStore();
 const store = storeToRefs(useCategoriesStore());
@@ -17,7 +19,6 @@ onMounted(() => {
   getCategories();
   getTopics("15");
 });
-
 </script>
 
 <template>
@@ -45,5 +46,6 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
   </div>
 </template>
