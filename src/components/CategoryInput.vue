@@ -3,19 +3,18 @@ import { ref, watchEffect, defineProps } from "vue";
 import { useCategoriesStore } from "@/stores/categories/useCategoriesStore.ts";
 import { storeToRefs } from "pinia";
 import { defineCategoryColor } from "@/utils/categoryColorUtil";
+import { ICategory } from "@/types";
 
 const store = storeToRefs(useCategoriesStore());
 
-const props = defineProps({
-  categories: {
-    type: Array,
-    required: true,
-  },
-});
-const openDropdown = ref<Boolean>(false);
-const modifiedCategories = ref<Array>([]);
+const props = defineProps<{
+  categories: ICategory[];
+}>();
 
-const addCategory = (value) => {
+const openDropdown = ref<Boolean>(false);
+const modifiedCategories = ref<ICategory[]>([]);
+
+const addCategory = (value: ICategory) => {
   console.log(modifiedCategories);
   if (!modifiedCategories.value.find((category) => category.id === value.id)) {
     modifiedCategories.value.push(value);
@@ -23,7 +22,7 @@ const addCategory = (value) => {
   }
 };
 
-const removeCategory = (value) => {
+const removeCategory = (value: ICategory) => {
   const index = modifiedCategories.value.findIndex(
     (category) => category.id === value.id
   );
@@ -40,7 +39,7 @@ watchEffect(() => {
 <template>
   <div class="relative mt-5">
     <div
-      class="grid grid-cols-2 md:grid-cols-4 gap-2 border rounded mb-4 px-3 py-3"
+      class="grid grid-cols-2 md:grid-cols-4 gap-2 border rounded mb-4 px-3 py-3 border-gray-600"
       @click.stop=""
       @click="openDropdown = !openDropdown"
     >
@@ -73,8 +72,12 @@ watchEffect(() => {
         class="hover:bg-gray-500 w-full px-1 py-2"
         @click.once="addCategory(category)"
       >
-        <span :class="defineCategoryColor(category)" class="text-secondary p-1">{{ category.name }}</span>
-        <p>{{category.description}}</p>
+        <span
+          :class="defineCategoryColor(category)"
+          class="text-secondary p-1"
+          >{{ category.name }}</span
+        >
+        <p>{{ category.description }}</p>
       </div>
     </div>
   </div>

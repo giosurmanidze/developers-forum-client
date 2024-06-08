@@ -4,6 +4,7 @@ import { btns } from "@/data/buttons";
 import { ref } from "vue";
 import AddTopicModal from "./AddTopicModal.vue";
 import CategoryInput from "./CategoryInput.vue";
+import CrudInput from './CrudInput.vue'
 
 const isModalOpened = ref(false);
 const categories = ref([]);
@@ -47,8 +48,13 @@ const submitHandler = () => {
           btnName="Create Topic"
         >
           <template #content
-            ><form>
-              <category-input :categories="categories" /></form
+            ><div>
+              <CrudInput
+                name="title"
+                rules="required"
+                placeholder="topic title..."
+              />
+              <category-input :categories="categories" /></div
           ></template>
         </add-topic-modal>
       </div>
