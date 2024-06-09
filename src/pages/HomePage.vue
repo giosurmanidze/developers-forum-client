@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { useCategoriesStore } from "@/stores/categories/useCategoriesStore";
-import CategoryCard from "@/components/CategoryCard.vue";
 import { storeToRefs } from "pinia";
+import { useCategoriesStore } from "@/stores/categories/useCategoriesStore";
 import { useTopicsStore } from "@/stores/topics/useTopicsStore";
-import TopicCard from "@/components/TopicCard.vue";
-import HeaderContent from "@/components/HeaderContent.vue";
+import { HeaderContent, CategoryCard, TopicCard } from "@/components";
 import { leftBorderColors } from "@/data/borderColors";
-
 
 const { getCategories } = useCategoriesStore();
 const { getTopics } = useTopicsStore();
@@ -45,6 +42,5 @@ onMounted(() => {
         </div>
       </div>
     </div>
-
   </div>
 </template>

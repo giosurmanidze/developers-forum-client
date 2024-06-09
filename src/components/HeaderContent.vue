@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import FilterButton from "./FilterButton.vue";
 import { btns } from "@/data/buttons";
 import { ref } from "vue";
-import AddTopicModal from "./AddTopicModal.vue";
-import CategoryInput from "./CategoryInput.vue";
-import CrudInput from "./CrudInput.vue";
+import { AddTopicModal, CategoryInput, CrudInput, FilterButton } from "./index";
 import { useCreateTopic } from "@/services";
 import { ICategory } from "@/types";
 
@@ -19,7 +16,6 @@ const openModal = () => {
 const closeModal = () => {
   isModalOpened.value = false;
 };
-
 </script>
 
 <template>
