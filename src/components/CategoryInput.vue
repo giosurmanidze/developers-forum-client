@@ -15,7 +15,6 @@ const openDropdown = ref<Boolean>(false);
 const modifiedCategories = ref<ICategory[]>([]);
 
 const addCategory = (value: ICategory) => {
-  console.log(modifiedCategories);
   if (!modifiedCategories.value.find((category) => category.id === value.id)) {
     modifiedCategories.value.push(value);
     openDropdown.value = false;

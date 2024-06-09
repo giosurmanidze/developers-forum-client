@@ -9,14 +9,15 @@ const props = defineProps<{
   btnName: string;
 }>();
 
-const emit = defineEmits(["modal-close"]);
+const emit = defineEmits(["modal-close","submit-handler"]);
 
 const target = ref<HTMLDivElement | null>(null);
 onClickOutside(target, () => emit("modal-close"));
 
-const submit = (values: any) => {
-  console.log(values);
+const handleSubmit = (values: any) => {
+  emit("submit-handler", values); 
 };
+
 </script>
 
 <template>
@@ -27,7 +28,7 @@ const submit = (values: any) => {
     <Form
       class="flex flex-col items-center bg-secondary p-8 rounded-lg shadow-md h-auto w-1/3"
       ref="target"
-      @submit="submit"
+      @submit="handleSubmit"
     >
       <div class="mb-4 text-2xl">
         <h1>{{ headerText }}</h1>

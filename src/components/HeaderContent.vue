@@ -5,9 +5,13 @@ import { ref } from "vue";
 import AddTopicModal from "./AddTopicModal.vue";
 import CategoryInput from "./CategoryInput.vue";
 import CrudInput from "./CrudInput.vue";
+import { useCreateTopic } from "@/services";
+import { ICategory } from "@/types";
 
-const isModalOpened = ref(false);
-const categories = ref([]);
+const isModalOpened = ref<Boolean>(false);
+const categories = ref<ICategory[]>([]);
+
+const { submit } = useCreateTopic(categories);
 
 const openModal = () => {
   isModalOpened.value = true;
@@ -16,9 +20,6 @@ const closeModal = () => {
   isModalOpened.value = false;
 };
 
-const submitHandler = () => {
-  //here you do whatever
-};
 </script>
 
 <template>
@@ -43,7 +44,7 @@ const submitHandler = () => {
         <add-topic-modal
           :isOpen="isModalOpened"
           @modal-close="closeModal"
-          @submit="submitHandler"
+          @submit-handler="submit"
           headerText="Create a new topic"
           btnName="Create Topic"
         >
