@@ -1,4 +1,4 @@
-import { IButton } from "@/types/button";
+import { IButton } from "@/types";
 
 export const btns: IButton[] = [
     {

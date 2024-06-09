@@ -9,7 +9,6 @@ import HeaderContent from "@/components/HeaderContent.vue";
 import { leftBorderColors } from "@/data/borderColors";
 
 
-
 const { getCategories } = useCategoriesStore();
 const { getTopics } = useTopicsStore();
 const store = storeToRefs(useCategoriesStore());
@@ -17,7 +16,7 @@ const storeTopics = storeToRefs(useTopicsStore());
 
 onMounted(() => {
   getCategories();
-  getTopics("15");
+  getTopics("10");
 });
 </script>
 
