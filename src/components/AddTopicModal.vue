@@ -25,7 +25,7 @@ const submit = (values: any) => {
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
   >
     <Form
-      class="flex flex-col items-center bg-secondary p-8 rounded-lg shadow-md h-2/4 w-1/3"
+      class="flex flex-col items-center bg-secondary p-8 rounded-lg shadow-md h-auto w-1/3"
       ref="target"
       @submit="submit"
     >

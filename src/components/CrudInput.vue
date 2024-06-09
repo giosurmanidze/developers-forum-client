@@ -1,13 +1,13 @@
 <template>
   <Field
-    name="title"
+    :name="name"
     :rules="rules"
     v-slot="{ field }"
     class="flex"
     :validate-on-input="true"
   >
     <div class="flex">
-      <template v-if="inputType === 'text' || 'number'">
+      <template v-if="inputType === 'text'">
         <input
           v-bind="field"
           :placeholder="placeholder"
@@ -20,7 +20,8 @@
           :placeholder="placeholder"
           class="mt-4 mb-1 py-3 px-3 border-gray-600 border rounded focus:outline-none w-full bg-transparent text-white placeholder-white"
           :class="classes"
-        ></textarea>
+          rows="5"
+          ></textarea>
       </template>
     </div>
   </Field>
