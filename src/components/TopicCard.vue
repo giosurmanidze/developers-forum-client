@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import { ITopic } from "@/types";
-import { defineCategoryColor } from "@/utils/categoryColorUtils";
-import { formatTime } from "@/utils/fotmatTimeUtils";
+import { formatTime, defineCategoryColor } from "@/utils";
 
 defineProps<{
   topic: ITopic;
   showUser: Boolean;
   showInfo: Boolean;
 }>();
-
-
 </script>
 
 <template>

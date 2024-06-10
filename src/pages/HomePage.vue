@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { useCategoriesStore } from "@/stores/categories/useCategoriesStore";
-import { useTopicsStore } from "@/stores/topics/useTopicsStore";
+import { useTopicsStore, useCategoriesStore } from "@/stores";
 import { HeaderContent, CategoryCard, TopicCard } from "@/components";
 import { leftBorderColors } from "@/data/borderColors";
 

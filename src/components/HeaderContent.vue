@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { btns } from "@/data/buttons";
 import { ref } from "vue";
+import { btns } from "@/data/buttons";
 import { AddTopicModal, CategoryInput, CrudInput, FilterButton } from "./index";
 import { useCreateTopic } from "@/services";
 import { ICategory } from "@/types";

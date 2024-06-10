@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useTopicsStore } from "@/stores/topics/useTopicsStore";
-import { TopicCard, HeaderContent } from "@/components";
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue";
+import { useTopicsStore } from "@/stores";
+import { TopicCard, HeaderContent } from "@/components";
 
 const { getTopics } = useTopicsStore();
 const store = storeToRefs(useTopicsStore());
