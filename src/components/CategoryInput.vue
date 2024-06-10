@@ -2,7 +2,7 @@
 import { ref, watchEffect, defineProps } from "vue";
 import { useCategoriesStore } from "@/stores/categories/useCategoriesStore.ts";
 import { storeToRefs } from "pinia";
-import { defineCategoryColor } from "@/utils/categoryColorUtil";
+import { defineCategoryColor } from "@/utils/categoryColorUtils";
 import { ICategory } from "@/types";
 
 const store = storeToRefs(useCategoriesStore());

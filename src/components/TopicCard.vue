@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { ITopic } from "@/types";
-import { defineCategoryColor } from "@/utils/categoryColorUtil";
+import { defineCategoryColor } from "@/utils/categoryColorUtils";
+import { formatTime } from "@/utils/fotmatTimeUtils";
 
 defineProps<{
   topic: ITopic;
   showUser: Boolean;
   showInfo: Boolean;
 }>();
+
+
 </script>
 
 <template>
@@ -30,6 +33,10 @@ defineProps<{
         <h3>{{ topic.replies_count }}</h3>
         <h3>{{ topic.views_count }}</h3>
         <h3>23m</h3>
+      </div>
+      <div class="flex flex-col gap-2 items-end text-primary_high" v-else>
+        <h3 class="text-2xl font-bold">{{ topic.replies_count }}</h3>
+        <h3>{{ formatTime(topic.created_at) }}</h3>
       </div>
     </div>
     <div class="h-[1px] bg-primary_high"></div>
