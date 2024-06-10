@@ -26,14 +26,14 @@ defineProps<{
           </button>
         </div>
       </div>
-      <div class="flex gap-12 text-primary_high text-xl" v-if="showInfo">
-        <h3>{{ topic.replies_count }}</h3>
-        <h3>{{ topic.views_count }}</h3>
-        <h3>23m</h3>
+      <div class="flex gap-12 text-primary_high" v-if="showInfo">
+        <h4>{{ topic.replies_count }}</h4>
+        <h4>{{ topic.views_count }}</h4>
+        <h4>{{ formatTime(topic.created_at) }}</h4>
       </div>
       <div class="flex flex-col gap-2 items-end text-primary_high" v-else>
-        <h3 class="text-2xl font-bold">{{ topic.replies_count }}</h3>
-        <h3>{{ formatTime(topic.created_at) }}</h3>
+        <h4 class="text-2xl font-bold">{{ topic.replies_count }}</h4>
+        <h4>{{ formatTime(topic.created_at) }}</h4>
       </div>
     </div>
     <div class="h-[1px] bg-primary_high"></div>
